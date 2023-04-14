@@ -122,11 +122,15 @@ export default {
     additonInfo(userInfo) {
       const sendData = { ...userInfo }
       sendData.carId = sendData.carId.toUpperCase()
-      additionUserInfo(sendData).then(() => {
-        this.dialogStatus = false
-        this.searchData()
-        this.reset()
-      })
+      additionUserInfo(sendData)
+        .then(() => {
+          alert('新增成功')
+        })
+        .then(() => {
+          this.dialogStatus = false
+          this.searchData()
+          this.reset()
+        })
     },
     closeDialog() {
       this.dialogStatus = false
@@ -152,17 +156,20 @@ td {
 /* 表格背景色 */
 th {
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #8ac78a;
+  font-weight: bold;
+  color: #215fb5;
+  font-size: 20px;
 }
 
 /* 條紋狀背景色 */
 tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #ecefec;
 }
 
 /* 滑鼠移入效果 */
 tr:hover {
-  background-color: #f5f5f5;
+  border: 4px solid black;
 }
 .over {
   text-overflow: ellipsis;
